@@ -1,1 +1,6 @@
+# pastas ignoradas
 .venv
+__pycache__
+
+# arquivos ignorados
+teste.py
