@@ -1,4 +1,5 @@
 # pastas ignoradas
+cpf
 .venv
 __pycache__
 
