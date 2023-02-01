@@ -1,5 +1,4 @@
 """pass"""
-import os
 from random import randint, sample
 
 
@@ -16,19 +15,16 @@ class Personagem:
         self.experiencia = 0
 
     def atacar(self, alvo: 'Monstro') -> None:
-        """atacar(self, alvo)"""
+        """ataca o monstro causando x de dano"""
         dano_real: int = self.ataque + randint(0, 10) - alvo.defesa
         dano_real: int = max(dano_real, 0)
         alvo.vida_atual -= dano_real
         print(f"{self.nome} atacou {alvo.nome} com dano {dano_real}.")
 
-    def verifica_xp(self) -> bool:
-        """verifica se vai subir de level"""
-        return self.experiencia > 100
-
     def sobe_level(self) -> None:
-        """sobre o level do Personagem e cura ele"""
-        while self.verifica_xp():
+        """sobre o level do Personagem, cura ele e atualiza o valor base da
+        vida do personagem"""
+        while self.experiencia > 100:
             self.experiencia: int = self.experiencia - 100
             self.level += 1
             self.ataque += 4
@@ -45,7 +41,7 @@ class Personagem:
 
 
 class Guerreiro(Personagem):
-    """class Guerreiro(Personagem)"""
+    """classe guerreira do jogador"""
 
     def __init__(self, nome, vida, ataque, defesa) -> None:
         Personagem.__init__(self, nome, vida, ataque, defesa)
@@ -59,28 +55,31 @@ class Monstro(Personagem):
         self.recompensa = recompensa
 
     def dar_xp(self, jog: Personagem) -> None:
-        """dar_xp(self, jog)"""
+        """quando o monstro morre, dá o xp dele para o personagem"""
         jog.experiencia += self.recompensa
         print(f"O {jog.nome} ganhou {self.recompensa} de xp.")
 
     @classmethod
     def cria_esqueleto(cls) -> 'Monstro':
-        """cria_esqueleto(cls)"""
+        """cria um monstro esqueleto"""
         return cls("Esqueleto", 50, 10, 2, 100)
 
     @classmethod
     def cria_goblin(cls) -> 'Monstro':
-        """cria_goblin(cls)"""
+        """cria um mostro goblin"""
         return cls("Goblin", 20, 8, 1, 20)
 
     @classmethod
     def cria_diablo(cls) -> 'Monstro':
-        """cria_diablo(cls)"""
+        """cria o chefe diablo"""
         return cls("Diablo", 250, 25, 8, 1000)
 
     @staticmethod
     def sorteia_monstro(qtd: int) -> list['Monstro']:
-        """sorteia_monstro(qtd)"""
+        """cria uma lista de monstros aleatória
+        50% de chance de criar um goblin
+        40% para o esqueleto
+        10 % para o diablo"""
         monstros: list['Monstro'] = []
         for _ in range(qtd):
             num: int = randint(1, 10)
@@ -114,45 +113,35 @@ class Game:
 
         # loop da batalha
         while True:
-            # O jogador ataca o monstro
-            jogador.atacar(monstro)
-            # Verificando se o monstro está vivo
+            # o jogador ataca o monstro
+            self.jogador.atacar(monstro)
+            # verifica se o monstro está vivo
             if monstro.vida_atual <= 0:
                 print(f"{monstro.nome} foi morto!")
-                monstro.dar_xp(jogador)
+                monstro.dar_xp(self.jogador)
                 self.monstros.remove(monstro)
                 self.jogador.sobe_level()
-                # print(self.jogador)
 
                 # fim de jogo
                 if not self.monstros:
                     break
 
+                # se ainda tiver monstro, pega o próximo aleatório da lista
                 monstro = sample(self.monstros, 1)[0]
                 print(
                     f"\n---{self.jogador.nome} vai enfrentar {monstro.nome}.---")
             else:
                 print(f"{monstro.nome} ainda está vivo.")
 
-            monstro.atacar(jogador)
-            # Verificando se o monstro está vivo
-            if jogador.vida_atual <= 0:
-                print(f"{jogador.nome} foi morto!")
+            monstro.atacar(self.jogador)
+            # verificando se o monstro está vivo
+            if self.jogador.vida_atual <= 0:
+                print(f"{self.jogador.nome} foi morto!")
                 break
-            print(f"{jogador.nome} ainda está vivo.")
+            print(f"{self.jogador.nome} ainda está vivo.")
             print()
 
         print(monstro)
 
     def __str__(self) -> str:
         return 'Board game'
-
-
-os.system('cls')  # limpa a tela
-print('*'*100)
-jogador: Guerreiro = Guerreiro(nome="Boromir", vida=100, ataque=20, defesa=5)
-jogo: Game = Game(jogador, 15)
-print(jogo)
-print(jogador)
-jogo.iniciar_luta()
-print(jogador)
