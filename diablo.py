@@ -134,7 +134,7 @@ class Game:
                 print(f"{monstro.nome} ainda está vivo.")
 
             monstro.atacar(self.jogador)
-            # verificando se o monstro está vivo
+            # verificando se o monstro está vivo ou morto
             if self.jogador.vida_atual <= 0:
                 print(f"{self.jogador.nome} foi morto!")
                 break
