@@ -141,6 +141,7 @@ class Game:
             print(f"{self.jogador.nome} ainda está vivo.")
             print()
 
+        # mostra o status do último monstro
         print(monstro)
 
     def __str__(self) -> str:

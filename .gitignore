@@ -1,4 +1,5 @@
 # pastas ignoradas
+calculadora
 cpf
 .venv
 __pycache__
