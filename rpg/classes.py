@@ -45,6 +45,22 @@ class Guerreiro(Personagem):
 
     def __init__(self, nome, vida, ataque, defesa) -> None:
         Personagem.__init__(self, nome, vida, ataque, defesa)
+        self.contagem_mostros: dict[str, int] = {}
+
+    def contagem(self, monstro: 'Monstro') -> None:
+        """realiza a contagem de monstros mortos"""
+        if monstro.nome not in self.contagem_mostros:
+            self.contagem_mostros[monstro.nome] = 1
+        else:
+            self.contagem_mostros[monstro.nome] += 1
+
+    def mostra_contagem(self) -> None:
+        """mostra a contagem de monstros mortos"""
+        if self.contagem_mostros:
+            for chave, valor in self.contagem_mostros.items():
+                print(f'{chave} : {valor}')
+        else:
+            print(f'{self.nome} ainda não matou monstro!')
 
 
 class Monstro(Personagem):
@@ -100,8 +116,8 @@ class Monstro(Personagem):
 class Game:
     """classe para gerenciar a luta"""
 
-    def __init__(self, jog: Personagem, qtd: int) -> None:
-        self.jogador: Personagem = jog
+    def __init__(self, jog: Guerreiro, qtd: int) -> None:
+        self.jogador: Guerreiro = jog
         self.monstros: list[Monstro] = Monstro.sorteia_monstro(qtd)
 
     def iniciar_luta(self) -> None:
@@ -121,6 +137,7 @@ class Game:
                 monstro.dar_xp(self.jogador)
                 self.monstros.remove(monstro)
                 self.jogador.sobe_level()
+                self.jogador.contagem(monstro)
 
                 # fim de jogo
                 if not self.monstros:

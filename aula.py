@@ -1,79 +1,53 @@
-"""teste de recursão"""
-from random import randint
-
-
-def multiplicacao(valor, i) -> int:
-    if i == 0:
-        return 0
-    return valor + multiplicacao(valor, i-1)
-
+"""docstring"""
 
 if __name__ == '__main__':
-    print(multiplicacao(10, 2))
+    numero_1 = 4
+    numero_2 = 5
+
+    print(numero_1 * numero_2)
+    resultado = numero_1 + numero_1 + numero_1 + numero_1 + numero_1
+    print(resultado)
+
+    resultado = 0
+    for _ in range(numero_2):
+        resultado = resultado + numero_1
+    print(resultado)
+
+    contador = numero_2
+    resultado = 0
+    while contador > 0:
+        resultado = resultado + numero_1
+        contador -= 1
+    print(resultado)
+
+    # 4 x 5
+    def multiplicacao_bracal(valor: int, cont: int) -> int:
+        """sou o docstring"""
+        if cont == 1:
+            return valor
+        return valor + multiplicacao_bracal(valor, cont-1)
+
+    print(multiplicacao_bracal(numero_1, numero_2))
+
+    nome: str = 'aragorn'
+
+    def divide_nome(texto: str) -> list[str]:
+        """retorna uma string dividida"""
+        return texto.split()
+
+    print(divide_nome(nome))
 
 
-class No:
-    def __init__(self, valor: int, esquerda: int = None, direita: int = None) -> None:
-        self.valor: int = valor
-        self.esquerda: int = esquerda
-        self.direita: int = direita
+class Teste:
+    def __init__(self, valor) -> None:
+        self.valor = valor
+
+    def mostra_valor(self, algo):
+        print(algo)
+        print(self.valor)
 
 
-def insere(no: No, valor: int) -> No:
-    if no is None:
-        return No(valor)
-    if valor < no.valor:
-        no.esquerda = insere(no.esquerda, valor)
-    else:
-        no.direita = insere(no.direita, valor)
-    return no
+meu_objeto = Teste(5)
+# objeto.mostra_valor(10)
 
-
-def buscador(no: No, alvo: int) -> bool:
-    if no is None:
-        return False
-
-    if no.valor == alvo:
-        return True
-
-    return buscador(no.esquerda, alvo) or buscador(no.direita, alvo)
-
-
-def cria_arvore_ordenada(lista: list[int]) -> No:
-    raiz = None
-    for valor in lista:
-        raiz: No = insere(raiz, valor)
-    return raiz
-
-
-def mostra_arvore(no: No, direcao: int = 0):
-    if no is None:
-        return
-    if direcao == 0:
-        print(no.valor)
-        mostra_arvore(no.esquerda, -1)
-        mostra_arvore(no.direita, 1)
-    elif direcao == -1:
-        print(" " * 4 * abs(direcao) + str(no.valor))
-        mostra_arvore(no.esquerda, direcao - 1)
-        mostra_arvore(no.direita, direcao + 1)
-    else:
-        print(" " * 4 * abs(direcao) + str(no.valor))
-        mostra_arvore(no.esquerda, direcao - 1)
-        mostra_arvore(no.direita, direcao + 1)
-
-
-def mostra_arvore_a(node: No, level: int = 0):
-    if node is None:
-        return
-    print(" " * 4 * (level + 1) + str(node.valor))
-    mostra_arvore_a(node.esquerda, level + 1)
-    mostra_arvore_a(node.direita, level + 1)
-
-
-valores: list[int] = [randint(1, 100) for _ in range(100)]
-
-arvore: No = cria_arvore_ordenada(valores)
-print(buscador(arvore, 100))
-print(buscador(arvore, 8))
-mostra_arvore(arvore)
+Teste.mostra_valor(meu_objeto, 10)
