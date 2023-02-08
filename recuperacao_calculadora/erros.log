@@ -1,0 +1,42 @@
+{'operacao': '1+8', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 9:46:10.636618'}
+{'operacao': '2 -9', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 9:46:10.637620'}
+{'operacao': 'a + 8', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 9:46:10.638619'}
+{'operacao': 'meu nome aqui a', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 9:46:10.639622'}
+{'operacao': '19** 2', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 9:46:10.640620'}
+{'operacao': 'asdf - 5', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 9:46:10.641619'}
+{'operacao': '5--10', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 9:46:10.642619'}
+{'operacao': '58 - 10 + 5', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 9:46:10.644617'}
+{'operacao': '1+8', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:28:10.158471'}
+{'operacao': '2 -9', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:28:10.159473'}
+{'operacao': 'a + 8', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:28:10.159473'}
+{'operacao': 'meu nome aqui a', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:28:10.160471'}
+{'operacao': '19** 2', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:28:10.160471'}
+{'operacao': 'asdf - 5', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:28:10.161473'}
+{'operacao': '5--10', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:28:10.161473'}
+{'operacao': '58 - 10 + 5', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:28:10.162471'}
+{'operacao': '1+8', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:16.36360'}
+{'operacao': '2 -9', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:16.37382'}
+{'operacao': 'a + 8', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:29:16.38360'}
+{'operacao': 'meu nome aqui a', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:29:16.39361'}
+{'operacao': '19** 2', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:16.39361'}
+{'operacao': 'asdf - 5', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:29:16.40360'}
+{'operacao': '5--10', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:16.41360'}
+{'operacao': '58 - 10 + 5', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:29:16.41360'}
+{'operacao': '1.5 + 41', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:29:50.112154'}
+{'operacao': '1+8', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:50.120152'}
+{'operacao': '2 -9', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:50.121151'}
+{'operacao': 'a + 8', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:29:50.122151'}
+{'operacao': 'meu nome aqui a', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:29:50.123151'}
+{'operacao': '19** 2', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:50.123151'}
+{'operacao': 'asdf - 5', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:29:50.124153'}
+{'operacao': '5--10', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:29:50.125152'}
+{'operacao': '58 - 10 + 5', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:29:50.126153'}
+{'operacao': '1+8', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:30:26.979529'}
+{'operacao': '2 -9', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:30:26.980528'}
+{'operacao': 'a + 8', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:30:26.981528'}
+{'operacao': 'meu nome aqui a', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:30:26.982528'}
+{'operacao': '19** 2', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:30:26.983618'}
+{'operacao': 'asdf - 5', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:30:26.984545'}
+{'operacao': '5--10', 'resultado': 'digitou poucos termos', 'data_hora': '8/2/2023 10:30:26.984545'}
+{'operacao': '58 - 10 + 5', 'resultado': 'digitou termos demais', 'data_hora': '8/2/2023 10:30:26.985527'}
+{'operacao': '3.14 + 16', 'resultado': 'o primeiro termo não é um número válido', 'data_hora': '8/2/2023 10:30:26.986530'}

@@ -1,0 +1,1 @@
+execute os módulos gui.py e monitorador.py
